@@ -49,8 +49,73 @@ public class Tablero {
         tablero [6][6]= new Peon(true);
         tablero [6][7]= new Peon(true);
         //el resto del tablero es nulo
-        
-     
     }
-    
-}
+    public void pintarTablero(){
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero.length; j++) {
+                if( j == 7){
+                    System.out.print(tablero[i][j]); //esto hay que modificarlo
+                }else{
+                    System.out.println(tablero[i][j]); // esto hay que modificarlo es solo una idea
+                }
+                
+            }
+            
+        }
+    }
+    public boolean hayPieza(int columna, int fila){
+        boolean respuesta = false;
+        if (tablero [fila][columna].nombre != null){
+            respuesta = true;
+        }
+        return respuesta;
+    }
+    public boolean hayPieza(Posicion pos){
+        boolean respuesta = false;
+        if (tablero [pos.getFila()][pos.getColumna()].nombre != null){
+            respuesta = true;
+        }
+        return respuesta;
+    }
+    //en este metodo hay que tener en cuenta si se va a sumar casillas o se van a borrar, teniendo en cuenta el color de la pieza que se va a mover
+    //ademas esto no tengo que hacerlo todavia, tambien tengo que utilizar el metodo de arriba haypieza
+    /*public boolean hayPiezasEntre(Movimiento mov){
+        boolean respuesta = false;
+        if (mov.esVertical(mov) == true){
+            for (int i = mov.getPosInicial().getFila(); i < mov.getPosFinal().getFila(); i++) {
+               if (tablero[i][mov.getPosInicial().getColumna()] == null){
+                   respuesta = false;
+               }else{
+                   respuesta = true;
+               }
+            }
+        }
+        if (mov.esHorizontal(mov) == true){
+            for (int i = mov.getPosInicial().getColumna(); i < mov.getPosFinal().getColumna(); i++) {
+                if (tablero[mov.getPosInicial().getFila()][i] == null){
+                    respuesta = false;
+               }else{
+                   respuesta = true;
+               }
+            }
+        }
+        if (mov.esDiagonal(mov) == true){
+            
+        }
+        return respuesta;
+    }*****/
+    public void ponPieza( Pieza figura, int fila, int columna){
+        
+    }
+    public void ponPieza ( Pieza figura, Posicion pos){
+        
+    }
+    public void quitaPieza (Posicion pos){
+        tablero[pos.getFila()][pos.getColumna()] = null;
+    }
+    public void quitaPieza (int fila, int columna){
+        tablero[fila][columna] = null;
+    }
+    public Pieza devuelvePieza (Posicion pos)
+    }
+
