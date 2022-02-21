@@ -19,6 +19,7 @@ public class Peon extends Pieza{
     }
 
     @Override
+    //prueba
     public boolean validoMovimiento(Movimiento mov) {
        boolean respuesta = false;
        if (mov.esVertical(mov) == true)
