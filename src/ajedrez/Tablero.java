@@ -105,10 +105,18 @@ public class Tablero {
         return respuesta;
     }*****/
     public void ponPieza( Pieza figura, int fila, int columna){
-        
+        if(this.hayPieza(fila, columna) == true){
+            System.out.println("Lo siento, en esta casilla ya hay un a pieza");
+        }else{
+        tablero [fila][columna]=figura;
+        }
     }
     public void ponPieza ( Pieza figura, Posicion pos){
-        
+        if(this.hayPieza(pos.getFila(), pos.getColumna()) == true){
+            System.out.println("Lo siento, en esta casilla ya hay un a pieza");
+        }else{
+        tablero[pos.getFila()][pos.getColumna()] = figura;
+        }
     }
     public void quitaPieza (Posicion pos){
         tablero[pos.getFila()][pos.getColumna()] = null;
@@ -116,6 +124,11 @@ public class Tablero {
     public void quitaPieza (int fila, int columna){
         tablero[fila][columna] = null;
     }
-    public Pieza devuelvePieza (Posicion pos)
+    public Pieza devuelvePieza (Posicion pos){
+        return tablero [pos.getFila()][pos.getColumna()];
+    }
+    public Pieza devuelvePieza (int fila, int columna){
+        return tablero [fila][columna];
+    }
     }
 
