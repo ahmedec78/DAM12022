@@ -14,7 +14,7 @@ public class Peon extends Pieza{
         
     }
     public Peon(boolean color){
-        nombre = "Peon";
+        nombre = "P";
         this.color = color;
     }
 
@@ -27,9 +27,6 @@ public class Peon extends Pieza{
        return respuesta;
     }
 
-    @Override
-    public void pintarPieza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }

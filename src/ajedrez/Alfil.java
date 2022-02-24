@@ -14,7 +14,7 @@ public class Alfil extends Pieza{
     
     }
     public Alfil(boolean color){
-        nombre="Alfil";
+        nombre="A";
         this.color = color;
     }
 
@@ -27,8 +27,5 @@ public class Alfil extends Pieza{
        return respuesta;
     }
 
-    @Override
-    public void pintarPieza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

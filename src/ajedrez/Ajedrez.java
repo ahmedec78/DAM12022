@@ -5,6 +5,8 @@
  */
 package ajedrez;
 
+import java.util.Scanner;
+
 /**
  *
  * @author ahmed
@@ -16,6 +18,25 @@ public class Ajedrez {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner l = new Scanner(System.in);
+        Tablero tablero = new Tablero();
+        tablero.pintarTablero();
+        Juego partida = new Juego();
+        
+        boolean finDePartida = false;
+        do{
+            if(partida.getTurno() == true){
+                System.out.println("Es el turno de las blancas");
+            }else{
+                System.out.println("Es el turno de las negras");
+            }
+            tablero.pintarTablero();
+            System.out.println("Introduzca jugada, por favor");
+            String jugada = l.nextLine();
+            
+        }while(finDePartida == false);
+        
+        
     }
     
 }

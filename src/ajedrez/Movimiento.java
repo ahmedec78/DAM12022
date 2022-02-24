@@ -17,6 +17,10 @@ public class Movimiento {
     public Movimiento(){
         
     }
+    public Movimiento (Posicion posInicial, Posicion posFinal){
+        this.posInicial=posInicial;
+        this.posFinal=posFinal;
+    }
     public boolean esVertical(Movimiento mov){
         boolean respuesta = false;
         if ((this.posInicial.getColumna()==this.posFinal.getColumna())&&(this.posInicial.getFila()!=this.posFinal.getFila())){
@@ -44,12 +48,12 @@ public class Movimiento {
     public int saltoHorizontal(Movimiento mov){
         int salto;
         salto = this.posInicial.getColumna() - this.posFinal.getColumna();
-        return salto;
+        return Math.abs(salto);
     }
     public int saltoVertical (Movimiento mov){
         int salto;
         salto = this.posInicial.getFila() - this.posFinal.getFila();
-        return salto;
+        return Math.abs(salto);
     }
 
     public Posicion getPosInicial() {

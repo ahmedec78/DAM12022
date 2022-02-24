@@ -14,7 +14,7 @@ public class Rey extends Pieza{
         
     }
     public Rey(boolean color){
-        nombre = "Rey";
+        nombre = "R";
         this.color = color;
     }
     
@@ -22,16 +22,13 @@ public class Rey extends Pieza{
     @Override
     public boolean validoMovimiento (Movimiento mov) {
         boolean respuesta = false;
-        if((mov.esDiagonal(mov) == true)||(mov.esHorizontal(mov)== true)&&(mov.esVertical(mov) == true)){
+        if((mov.esDiagonal(mov) == true)||(mov.esHorizontal(mov)== true)||(mov.esVertical(mov) == true)){
             respuesta = true;
         }
         return respuesta;
     }
 
-    @Override
-    public void pintarPieza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public boolean isColor() {
         return color;

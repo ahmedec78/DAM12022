@@ -17,7 +17,13 @@ public Pieza(){
     
 }
 public abstract boolean validoMovimiento (Movimiento mov);
-public abstract void pintarPieza(); 
+public  void pintarPieza(){
+   if(this.color == true){
+        System.out.print(nombre+"b ");
+    }else{
+            System.out.print(nombre+"n ");
+    }
+}
 public boolean getColor (){
     return color;
 }

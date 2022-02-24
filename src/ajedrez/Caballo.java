@@ -15,21 +15,18 @@ public class Caballo extends Pieza{
         
     }
     public Caballo(boolean color){
-        nombre="Caballo";
+        nombre="C";
         this.color = color;
     }
 
     @Override
     public boolean validoMovimiento(Movimiento mov) {
         boolean respuesta = false;
-        if(((mov.saltoVertical(mov)==1)&&(mov.saltoHorizontal(mov)==2))||((mov.saltoVertical(mov)==2)&&(mov.saltoHorizontal(mov)==1))){
+        if(((mov.saltoVertical(mov)==(Math.abs(1)))&&(mov.saltoHorizontal(mov)==(Math.abs(2))))||((mov.saltoVertical(mov)==(Math.abs(2)))&&(mov.saltoHorizontal(mov)==(Math.abs(1))))){
             respuesta = true;
         }
         return respuesta;
     }
 
-    @Override
-    public void pintarPieza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

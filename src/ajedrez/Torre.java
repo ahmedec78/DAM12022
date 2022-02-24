@@ -14,7 +14,7 @@ public class Torre extends Pieza{
         
     }
     public Torre(boolean color){
-        nombre = "Torre";
+        nombre = "T";
         this.color = color;
     }
     
@@ -28,8 +28,5 @@ public class Torre extends Pieza{
         return respuesta;
     }
 
-    @Override
-    public void pintarPieza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

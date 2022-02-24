@@ -14,7 +14,7 @@ public class Reina extends Pieza{
         
     }
     public Reina(boolean color){
-        nombre = "Reina";
+        nombre = "Ra";
         this.color = color;
     }
     
@@ -28,8 +28,6 @@ public class Reina extends Pieza{
         return respuesta;
     }
 
-    @Override
-    public void pintarPieza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
+   
 }

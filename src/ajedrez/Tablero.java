@@ -54,9 +54,18 @@ public class Tablero {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
                 if( j == 7){
-                    System.out.print(tablero[i][j]); //esto hay que modificarlo
+                    if( tablero [i][j] != null){
+                        tablero [i][j].pintarPieza();
+                        System.out.println("");
+                    }else{
+                        System.out.println("   ");
+                    }
                 }else{
-                    System.out.println(tablero[i][j]); // esto hay que modificarlo es solo una idea
+                    if( tablero [i][j] != null){
+                        tablero [i][j].pintarPieza();
+                    }else{
+                        System.out.print("   ");
+                    }
                 }
                 
             }
@@ -130,5 +139,5 @@ public class Tablero {
     public Pieza devuelvePieza (int fila, int columna){
         return tablero [fila][columna];
     }
-    }
+}
 
