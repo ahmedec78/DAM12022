@@ -88,18 +88,21 @@ public class Tablero {
     }
     //en este metodo hay que tener en cuenta si se va a sumar casillas o se van a borrar, teniendo en cuenta el color de la pieza que se va a mover
     //ademas esto no tengo que hacerlo todavia, tambien tengo que utilizar el metodo de arriba haypieza
-    /*public boolean hayPiezasEntre(Movimiento mov){
+    public boolean hayPiezasEntre(Movimiento mov){
         boolean respuesta = false;
         if (mov.esVertical(mov) == true){
-            for (int i = mov.getPosInicial().getFila(); i < mov.getPosFinal().getFila(); i++) {
-               if (tablero[i][mov.getPosInicial().getColumna()] == null){
-                   respuesta = false;
+            int i;
+            i = 0;
+            do{
+                if (tablero[mov.getPosInicial().getFila()+i][mov.getPosInicial().getColumna()] == null){
+                    respuesta = false;
                }else{
                    respuesta = true;
                }
-            }
+                i ++;
+            }while (respuesta == false || i < Math.abs((mov.getPosFinal().getFila()) )  );
         }
-        if (mov.esHorizontal(mov) == true){
+        /*if (mov.esHorizontal(mov) == true){
             for (int i = mov.getPosInicial().getColumna(); i < mov.getPosFinal().getColumna(); i++) {
                 if (tablero[mov.getPosInicial().getFila()][i] == null){
                     respuesta = false;
@@ -107,12 +110,43 @@ public class Tablero {
                    respuesta = true;
                }
             }
+        }*/
+        if (mov.esHorizontal(mov) == true){
+            int i;
+            i = 0;
+            do{
+                if (tablero[mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()+i] == null){
+                    respuesta = false;
+               }else{
+                   respuesta = true;
+               }
+                i ++;
+            }while (respuesta == false || i < Math.abs((mov.getPosFinal().getFila()) )  );
         }
+        /*if (mov.esDiagonal(mov) == true){
+            for (int i = 1; i < Math.abs(mov.getPosFinal().getFila()-mov.getPosInicial().getFila()); i++ ) {
+               if(tablero[mov.getPosInicial().getFila() + i][mov.getPosInicial().getColumna()+i] != null ) {
+                   respuesta == false;
+               }else{
+                   respuesta == true;
+               }
+            }
+        }*/
         if (mov.esDiagonal(mov) == true){
-            
+            int i;
+            i = 0;
+        do{
+           
+            if(tablero[mov.getPosInicial().getFila() + i][mov.getPosInicial().getColumna()+i] != null ) {
+                respuesta = true;
+            }else{
+                respuesta = false;
+            }
+            i++; 
+            } while(respuesta == false || i < Math.abs(mov.getPosFinal().getFila()-mov.getPosInicial().getFila()));
         }
         return respuesta;
-    }*****/
+    }
     public void ponPieza( Pieza figura, int fila, int columna){
         if(this.hayPieza(fila, columna) == true){
             System.out.println("Lo siento, en esta casilla ya hay un a pieza");

@@ -23,7 +23,8 @@ public class Rey extends Pieza{
     public boolean validoMovimiento (Movimiento mov) {
         boolean respuesta = false;
         if((mov.esDiagonal(mov) == true)||(mov.esHorizontal(mov)== true)||(mov.esVertical(mov) == true)){
-            respuesta = true;
+            if((Math.abs(mov.getPosFinal().getFila()-mov.getPosInicial().getFila()) == 1)||(Math.abs(mov.getPosFinal().getColumna()-mov.getPosInicial().getColumna()) == 1))
+                respuesta = true;
         }
         return respuesta;
     }

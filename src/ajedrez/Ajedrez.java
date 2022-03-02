@@ -33,6 +33,16 @@ public class Ajedrez {
             tablero.pintarTablero();
             System.out.println("Introduzca jugada, por favor");
             String jugada = l.nextLine();
+            partida.jugada(jugada, tablero);
+            for (int i = 0; i < tablero.tablero.length; i++) {
+                for (int j = 0; j < tablero.tablero.length; j++) {
+                    if(tablero.tablero[i][j].nombre != "R")
+                        finDePartida=true;
+                        
+                }
+                String arg = args[i];
+                
+            }
             
         }while(finDePartida == false);
         

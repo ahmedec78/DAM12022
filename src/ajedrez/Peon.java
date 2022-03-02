@@ -22,7 +22,7 @@ public class Peon extends Pieza{
     //prueba
     public boolean validoMovimiento(Movimiento mov) {
        boolean respuesta = false;
-       if (mov.esVertical(mov) == true)
+       if (mov.esVertical(mov) == true || (mov.esDiagonal(mov) == true))
            respuesta = true;
        return respuesta;
     }
