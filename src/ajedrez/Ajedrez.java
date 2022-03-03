@@ -25,25 +25,27 @@ public class Ajedrez {
         
         boolean finDePartida = false;
         do{
-            if(partida.getTurno() == true){
-                System.out.println("Es el turno de las blancas");
-            }else{
-                System.out.println("Es el turno de las negras");
-            }
             tablero.pintarTablero();
+            partida.mostrarTurno();
+            
             System.out.println("Introduzca jugada, por favor");
             String jugada = l.nextLine();
             partida.jugada(jugada, tablero);
+            Movimiento mov =  partida.jugada(jugada, tablero);
+            
+            
+            
             for (int i = 0; i < tablero.tablero.length; i++) {
                 for (int j = 0; j < tablero.tablero.length; j++) {
+                    
                     if(tablero.tablero[i][j].nombre != "R")
                         finDePartida=true;
                         
                 }
-                String arg = args[i];
+                
                 
             }
-            
+           partida.setTurno();
         }while(finDePartida == false);
         
         

@@ -23,7 +23,15 @@ public class Juego {
                elTurno = false;
            }
         }
-        public void incializar (Tablero tablero){
+        //Este metodo te imprime de quien es el turno
+        public void mostrarTurno (){
+        if  (elTurno == false){
+            System.out.println("Turno de blancas");
+        }else{
+            System.out.println("Turno de negras");
+        }
+    }
+        public void inicializar (Tablero tablero){
             
         }
         public void pintar(Tablero tablero){}
@@ -66,7 +74,54 @@ public class Juego {
         }
             return mov;
         }
-        public void moverJuego (Movimiento mov, Tablero tablero){}
+        //Este metodo mueve la pieza de una casilla a otra, con la ayuda de una variable auxiliar.
+        public void moverJuego (Movimiento mov, Tablero tablero){
+            String figura = new String();
+            figura = tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()].getClass().getSimpleName();
+            Pieza auxiliar;
+            switch (figura){
+                case "Rey":
+                    auxiliar = new Rey();
+                    auxiliar = tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
+                    tablero [mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()] = auxiliar;
+                    tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()] = null;
+                break;
+                case "Reina":
+                    auxiliar = new Reina();
+                    auxiliar = tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
+                    tablero [mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()] = auxiliar;
+                    tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()] = null;
+                break;
+                case "Alfil":
+                    auxiliar = new Alfil();
+                    auxiliar = tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
+                    tablero [mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()] = auxiliar;
+                    tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()] = null;
+                break;   
+                case "Torre":
+                    auxiliar = new Torre();
+                    auxiliar = tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
+                    tablero [mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()] = auxiliar;
+                    tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()] = null;
+                break;
+                case "Caballo":
+                    auxiliar = new Caballo();
+                    auxiliar = tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
+                    tablero [mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()] = auxiliar;
+                    tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()] = null;
+                break;
+                case "Peon":
+                    auxiliar = new Peon();
+                    auxiliar = tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()];
+                    tablero [mov.getPosFinal().getFila()][mov.getPosFinal().getColumna()] = auxiliar;
+                    tablero [mov.getPosInicial().getFila()][mov.getPosInicial().getColumna()] = null;
+                break;
+                default:
+                    System.out.println("Ha habido un problema a la hora de identificar la clase de la Pieza");
+                break;
+            }
+        
+        }
        
         
 }
